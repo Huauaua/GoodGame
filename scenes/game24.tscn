@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8o83tbuvqbu2"]
+[gd_scene load_steps=10 format=3 uid="uid://c8o83tbuvqbu2"]
 
 [ext_resource type="Texture2D" uid="uid://d37evdnwvfoa2" path="res://assets/ATOI.png" id="2_miium"]
 [ext_resource type="Theme" uid="uid://oqv2cq8xkaqk" path="res://game24.tres" id="2_uc4v4"]
+[ext_resource type="Script" uid="uid://c52moals2jysj" path="res://scripts/Player.cs" id="3_8r2ih"]
+[ext_resource type="Texture2D" uid="uid://dx06dy5r36v6n" path="res://icon.svg" id="3_miium"]
+[ext_resource type="Script" uid="uid://tfayhyjoqr5u" path="res://scripts/InputComponent.cs" id="5_7xbr5"]
+[ext_resource type="Script" uid="uid://xekxfkg0hs2g" path="res://scripts/DragComponent.cs" id="6_blagy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6xtyb"]
 font_size = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc4v4"]
+size = Vector2(107, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blagy"]
+size = Vector2(105, 107)
 
 [node name="Game24" type="Node2D"]
 
@@ -109,6 +119,7 @@ text = "空"
 metadata/_edit_lock_ = true
 
 [node name="TabContainer" type="TabContainer" parent="."]
+visible = false
 offset_right = 1153.0
 offset_bottom = 657.0
 theme = ExtResource("2_uc4v4")
@@ -205,3 +216,55 @@ layout_mode = 2
 theme = ExtResource("2_uc4v4")
 text = "im a button"
 metadata/_tab_index = 2
+
+[node name="player_use_component" type="CharacterBody2D" parent="."]
+script = ExtResource("3_8r2ih")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="player_use_component"]
+scale = Vector2(0.835, 0.835)
+texture = ExtResource("3_miium")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_component"]
+shape = SubResource("RectangleShape2D_uc4v4")
+
+[node name="InputComponent" type="Node" parent="player_use_component"]
+script = ExtResource("5_7xbr5")
+
+[node name="player_use_component2" type="CharacterBody2D" parent="."]
+position = Vector2(194, 70)
+script = ExtResource("3_8r2ih")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="player_use_component2"]
+scale = Vector2(0.835, 0.835)
+texture = ExtResource("3_miium")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_component2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_uc4v4")
+
+[node name="InputComponent" type="Node" parent="player_use_component2"]
+script = ExtResource("5_7xbr5")
+
+[node name="player_use_draggable_component" type="Area2D" parent="."]
+position = Vector2(497, 97)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="player_use_draggable_component"]
+scale = Vector2(0.835, 0.835)
+texture = ExtResource("3_miium")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_draggable_component"]
+position = Vector2(-0.5, 15)
+shape = SubResource("RectangleShape2D_uc4v4")
+
+[node name="InputComponent" type="Node" parent="player_use_draggable_component"]
+script = ExtResource("5_7xbr5")
+
+[node name="DragComponent" type="Area2D" parent="player_use_draggable_component"]
+script = ExtResource("6_blagy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_draggable_component/DragComponent"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_blagy")
