@@ -1,22 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8o83tbuvqbu2"]
+[gd_scene load_steps=12 format=3 uid="uid://c8o83tbuvqbu2"]
 
+[ext_resource type="Script" uid="uid://d1ymipl5tythu" path="res://scripts/GameManager.cs" id="1_l8as0"]
 [ext_resource type="Texture2D" uid="uid://d37evdnwvfoa2" path="res://assets/ATOI.png" id="2_miium"]
 [ext_resource type="Theme" uid="uid://oqv2cq8xkaqk" path="res://game24.tres" id="2_uc4v4"]
 [ext_resource type="Script" uid="uid://c52moals2jysj" path="res://scripts/Player.cs" id="3_8r2ih"]
 [ext_resource type="Texture2D" uid="uid://dx06dy5r36v6n" path="res://icon.svg" id="3_miium"]
 [ext_resource type="Script" uid="uid://tfayhyjoqr5u" path="res://scripts/InputComponent.cs" id="5_7xbr5"]
 [ext_resource type="Script" uid="uid://xekxfkg0hs2g" path="res://scripts/DragComponent.cs" id="6_blagy"]
+[ext_resource type="Script" uid="uid://duklrnjntftcp" path="res://scripts/HoverColorRect.cs" id="8_v4lg5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6xtyb"]
 font_size = 50
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uc4v4"]
-size = Vector2(107, 78)
+size = Vector2(109, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blagy"]
 size = Vector2(105, 107)
 
 [node name="Game24" type="Node2D"]
+script = ExtResource("1_l8as0")
 
 [node name="GUI" type="Node2D" parent="."]
 
@@ -218,6 +221,7 @@ text = "im a button"
 metadata/_tab_index = 2
 
 [node name="player_use_component" type="CharacterBody2D" parent="."]
+position = Vector2(301, 435)
 script = ExtResource("3_8r2ih")
 metadata/_edit_group_ = true
 
@@ -232,7 +236,7 @@ shape = SubResource("RectangleShape2D_uc4v4")
 script = ExtResource("5_7xbr5")
 
 [node name="player_use_component2" type="CharacterBody2D" parent="."]
-position = Vector2(194, 70)
+position = Vector2(416, 436)
 script = ExtResource("3_8r2ih")
 metadata/_edit_group_ = true
 
@@ -247,8 +251,24 @@ shape = SubResource("RectangleShape2D_uc4v4")
 [node name="InputComponent" type="Node" parent="player_use_component2"]
 script = ExtResource("5_7xbr5")
 
+[node name="player_use_component3" type="CharacterBody2D" parent="."]
+position = Vector2(614, 397)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="player_use_component3"]
+scale = Vector2(0.835, 0.835)
+texture = ExtResource("3_miium")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_component3"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_uc4v4")
+
+[node name="InputComponent" type="Node" parent="player_use_component3"]
+script = ExtResource("5_7xbr5")
+
 [node name="player_use_draggable_component" type="Area2D" parent="."]
-position = Vector2(497, 97)
+position = Vector2(522, 263)
+script = ExtResource("6_blagy")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="player_use_draggable_component"]
@@ -256,7 +276,7 @@ scale = Vector2(0.835, 0.835)
 texture = ExtResource("3_miium")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_draggable_component"]
-position = Vector2(-0.5, 15)
+position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_uc4v4")
 
 [node name="InputComponent" type="Node" parent="player_use_draggable_component"]
@@ -268,3 +288,22 @@ script = ExtResource("6_blagy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_draggable_component/DragComponent"]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_blagy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 164.0
+offset_top = 206.0
+offset_right = 320.0
+offset_bottom = 296.0
+color = Color(0.2, 0.2, 0.2, 1)
+script = ExtResource("8_v4lg5")
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "我是个label"
+horizontal_alignment = 1
+vertical_alignment = 1
