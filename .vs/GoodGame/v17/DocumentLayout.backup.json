@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\dragcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\dragcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\inputcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\inputcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\hovercolorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\hovercolorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\inputcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\inputcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,38 +39,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DragComponent.cs",
-              "DocumentMoniker": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\DragComponent.cs",
-              "RelativeDocumentMoniker": "scripts\\DragComponent.cs",
-              "ToolTip": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\DragComponent.cs",
-              "RelativeToolTip": "scripts\\DragComponent.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwCUAAAAFAAAAAAAAAA==",
+              "Title": "HoverColorRect.cs",
+              "DocumentMoniker": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\HoverColorRect.cs",
+              "RelativeDocumentMoniker": "scripts\\HoverColorRect.cs",
+              "ToolTip": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\HoverColorRect.cs",
+              "RelativeToolTip": "scripts\\HoverColorRect.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA3wBgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T07:29:57.003Z",
+              "WhenOpened": "2026-01-05T12:16:40.614Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\Player.cs",
               "RelativeDocumentMoniker": "scripts\\Player.cs",
               "ToolTip": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\Player.cs",
               "RelativeToolTip": "scripts\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-04T06:43:47.238Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "InputComponent.cs",
               "DocumentMoniker": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\InputComponent.cs",
               "RelativeDocumentMoniker": "scripts\\InputComponent.cs",
               "ToolTip": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\InputComponent.cs",
               "RelativeToolTip": "scripts\\InputComponent.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAwAgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAxwBgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-04T06:35:18.342Z",
               "EditorCaption": ""

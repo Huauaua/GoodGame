@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8o83tbuvqbu2"]
+[gd_scene load_steps=15 format=3 uid="uid://c8o83tbuvqbu2"]
 
 [ext_resource type="Script" uid="uid://d1ymipl5tythu" path="res://scripts/GameManager.cs" id="1_l8as0"]
 [ext_resource type="Texture2D" uid="uid://d37evdnwvfoa2" path="res://assets/ATOI.png" id="2_miium"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://tfayhyjoqr5u" path="res://scripts/InputComponent.cs" id="5_7xbr5"]
 [ext_resource type="Script" uid="uid://xekxfkg0hs2g" path="res://scripts/DragComponent.cs" id="6_blagy"]
 [ext_resource type="Script" uid="uid://duklrnjntftcp" path="res://scripts/HoverColorRect.cs" id="8_v4lg5"]
+[ext_resource type="Script" uid="uid://cwhmskee1nrgi" path="res://scripts/DraggableColorRect.cs" id="9_pphqj"]
+[ext_resource type="Script" uid="uid://3fakko0m1jxd" path="res://scripts/NewScript.cs" id="10_g58e0"]
+[ext_resource type="Texture2D" uid="uid://wgncud258iml" path="res://assets/heart.webp" id="11_1wpo3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6xtyb"]
 font_size = 50
@@ -15,8 +18,7 @@ font_size = 50
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uc4v4"]
 size = Vector2(109, 104)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_blagy"]
-size = Vector2(105, 107)
+[sub_resource type="Theme" id="Theme_l8as0"]
 
 [node name="Game24" type="Node2D"]
 script = ExtResource("1_l8as0")
@@ -220,84 +222,67 @@ theme = ExtResource("2_uc4v4")
 text = "im a button"
 metadata/_tab_index = 2
 
-[node name="player_use_component" type="CharacterBody2D" parent="."]
+[node name="Players" type="Node2D" parent="."]
+
+[node name="player_use_component" type="CharacterBody2D" parent="Players"]
 position = Vector2(301, 435)
 script = ExtResource("3_8r2ih")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="player_use_component"]
+[node name="Sprite2D" type="Sprite2D" parent="Players/player_use_component"]
 scale = Vector2(0.835, 0.835)
 texture = ExtResource("3_miium")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_component"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/player_use_component"]
 shape = SubResource("RectangleShape2D_uc4v4")
 
-[node name="InputComponent" type="Node" parent="player_use_component"]
+[node name="InputComponent" type="Node" parent="Players/player_use_component"]
 script = ExtResource("5_7xbr5")
 
-[node name="player_use_component2" type="CharacterBody2D" parent="."]
+[node name="player_use_component2" type="CharacterBody2D" parent="Players"]
 position = Vector2(416, 436)
 script = ExtResource("3_8r2ih")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="player_use_component2"]
+[node name="Sprite2D" type="Sprite2D" parent="Players/player_use_component2"]
 scale = Vector2(0.835, 0.835)
 texture = ExtResource("3_miium")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_component2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/player_use_component2"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_uc4v4")
 
-[node name="InputComponent" type="Node" parent="player_use_component2"]
+[node name="InputComponent" type="Node" parent="Players/player_use_component2"]
 script = ExtResource("5_7xbr5")
 
-[node name="player_use_component3" type="CharacterBody2D" parent="."]
+[node name="player_use_component3" type="CharacterBody2D" parent="Players"]
 position = Vector2(614, 397)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="player_use_component3"]
+[node name="Sprite2D" type="Sprite2D" parent="Players/player_use_component3"]
 scale = Vector2(0.835, 0.835)
 texture = ExtResource("3_miium")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_component3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/player_use_component3"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_uc4v4")
 
-[node name="InputComponent" type="Node" parent="player_use_component3"]
+[node name="InputComponent" type="Node" parent="Players/player_use_component3"]
 script = ExtResource("5_7xbr5")
 
-[node name="player_use_draggable_component" type="Area2D" parent="."]
-position = Vector2(522, 263)
-script = ExtResource("6_blagy")
-metadata/_edit_group_ = true
+[node name="ColorRects" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="player_use_draggable_component"]
-scale = Vector2(0.835, 0.835)
-texture = ExtResource("3_miium")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_draggable_component"]
-position = Vector2(0.5, 2)
-shape = SubResource("RectangleShape2D_uc4v4")
-
-[node name="InputComponent" type="Node" parent="player_use_draggable_component"]
-script = ExtResource("5_7xbr5")
-
-[node name="DragComponent" type="Area2D" parent="player_use_draggable_component"]
-script = ExtResource("6_blagy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_use_draggable_component/DragComponent"]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_blagy")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 164.0
-offset_top = 206.0
-offset_right = 320.0
-offset_bottom = 296.0
+[node name="ColorButton" type="ColorRect" parent="ColorRects"]
+offset_left = 144.0
+offset_top = 185.0
+offset_right = 300.0
+offset_bottom = 275.0
+theme = SubResource("Theme_l8as0")
 color = Color(0.2, 0.2, 0.2, 1)
 script = ExtResource("8_v4lg5")
+metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="ColorRects/ColorButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -307,3 +292,114 @@ grow_vertical = 2
 text = "我是个label"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DraggableRect" type="ColorRect" parent="ColorRects"]
+offset_left = 860.0
+offset_top = 522.0
+offset_right = 1060.0
+offset_bottom = 722.0
+color = Color(0.82, 0.5412, 0.77818, 1)
+script = ExtResource("9_pphqj")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="ColorRects/DraggableRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "我是个label"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DraggableRect2" type="ColorRect" parent="ColorRects"]
+offset_left = 539.0
+offset_top = 528.0
+offset_right = 739.0
+offset_bottom = 728.0
+color = Color(0.82, 0.5412, 0.77818, 1)
+script = ExtResource("9_pphqj")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="ColorRects/DraggableRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "我是个label"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DraggableRect3" type="ColorRect" parent="ColorRects"]
+offset_left = -3.0
+offset_top = 528.0
+offset_right = 197.0
+offset_bottom = 728.0
+color = Color(0.82, 0.5412, 0.77818, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="ColorRects/DraggableRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "我是个label"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DragComponent" type="Control" parent="ColorRects/DraggableRect3"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_blagy")
+
+[node name="DraggableRectUseComponent" type="ColorRect" parent="ColorRects"]
+offset_left = 255.0
+offset_top = 522.0
+offset_right = 455.0
+offset_bottom = 722.0
+color = Color(0.82, 0.5412, 0.77818, 1)
+script = ExtResource("10_g58e0")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="ColorRects/DraggableRectUseComponent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "我是个label"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DragComponent" type="Control" parent="ColorRects/DraggableRectUseComponent"]
+anchors_preset = 0
+script = ExtResource("6_blagy")
+
+[node name="Button" type="Button" parent="ColorRects"]
+offset_left = 763.0
+offset_top = 230.0
+offset_right = 899.0
+offset_bottom = 366.0
+text = "我是个button"
+icon = ExtResource("11_1wpo3")
+flat = true
+icon_alignment = 1
+
+[node name="DragComponent" type="Control" parent="ColorRects/Button"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_blagy")

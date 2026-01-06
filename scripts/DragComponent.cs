@@ -1,6 +1,6 @@
 ﻿using Godot;
 
-public partial class DragComponent : Area2D
+public partial class DragComponent : Control
 {
     [Signal] public delegate void DragStartedEventHandler();
     [Signal] public delegate void DragEndedEventHandler();
@@ -8,89 +8,86 @@ public partial class DragComponent : Area2D
     [Export] public bool Enabled { get; set; } = true;
     [Export] public MouseButton DragButton { get; set; } = MouseButton.Left;
 
-    public bool IsDragging { get; private set; }
-
-    private Node2D _target;
-    private Vector2 _dragOffset;
+    private Control target;
+    private bool isDragging = false;
+    private Vector2 dragOffset;
 
     public override void _Ready()
     {
-        _target = GetParent() as Node2D;
-
-        if (_target == null)
+        // 默认目标是父节点（必须是Control）
+        if (GetParent() is Control control)
         {
-            GD.PrintErr("DragComponent 必须附加到 Node2D 节点上");
-            return;
-        }
+            target = control;
+            target.MouseFilter = Control.MouseFilterEnum.Pass;
 
-        // 自动创建碰撞形状（如果不存在）
-        if (GetChildCount() == 0)
+            // 连接到目标的GuiInput信号
+            target.GuiInput += OnTargetGuiInput;
+        }
+        else
         {
-            var shape = new CollisionShape2D();
-            shape.Shape = new RectangleShape2D { Size = new Vector2(100, 100) };
-            AddChild(shape);
+            GD.PrintErr("DragComponent必须附加到Control节点上");
+            Enabled = false;
         }
-
-        // 设置 Area2D 属性
-        InputPickable = true;
-        Monitoring = true;
-        Monitorable = true;
     }
 
-    // 处理输入事件（Area2D 的方法）
-    public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
+    private void OnTargetGuiInput(InputEvent @event)
     {
-        if (!Enabled || _target == null) return;
+        if (!Enabled) return;
 
-        if (@event is InputEventMouseButton mouseButton &&
-            mouseButton.ButtonIndex == DragButton)
+        if (@event is InputEventMouseButton mouseButton && mouseButton.ButtonIndex == DragButton)
         {
             if (mouseButton.Pressed)
             {
-                // 开始拖动
-                IsDragging = true;
-                _dragOffset = _target.GlobalPosition - mouseButton.GlobalPosition;
-                EmitSignal(SignalName.DragStarted);
-
-                // C# 中阻止事件传递的方法
-                GetViewport().SetInputAsHandled();
+                StartDrag();
+            }
+            else if (isDragging)
+            {
+                EndDrag();
             }
         }
     }
 
     public override void _Process(double delta)
     {
-        if (IsDragging && _target != null)
+        if (isDragging && target != null)
         {
-            // 更新位置
-            var mousePos = GetGlobalMousePosition();
-            _target.GlobalPosition = mousePos + _dragOffset;
+            target.Position = target.GetViewport().GetMousePosition() + dragOffset;
         }
     }
 
-    public override void _Input(InputEvent @event)
+    private void StartDrag()
     {
-        // 处理鼠标释放
-        if (@event is InputEventMouseButton mouseButton &&
-            mouseButton.ButtonIndex == DragButton &&
-            !mouseButton.Pressed &&
-            IsDragging)
-        {
-            IsDragging = false;
-            EmitSignal(SignalName.DragEnded);
-        }
+        if (isDragging) return;
+
+        isDragging = true;
+        dragOffset = target.Position - target.GetViewport().GetMousePosition();
+        _ = EmitSignal(SignalName.DragStarted);
     }
 
-    // 获取全局鼠标位置
-    private Vector2 GetGlobalMousePosition()
+    private void EndDrag()
     {
-        // 方法1：如果有相机，使用相机的全局鼠标位置
-        if (GetViewport()?.GetCamera2D() is Camera2D camera)
+        if (!isDragging) return;
+
+        isDragging = false;
+        EmitSignal(SignalName.DragEnded);
+    }
+
+    public void SetTarget(Control newTarget)
+    {
+        if (isDragging) EndDrag();
+
+        // 断开旧目标
+        if (target != null)
         {
-            return camera.GetGlobalMousePosition();
+            target.GuiInput -= OnTargetGuiInput;
         }
 
-        // 方法2：否则使用视口鼠标位置（可能需要转换）
-        return GetViewport().GetMousePosition();
+        // 连接新目标
+        target = newTarget;
+        if (target != null)
+        {
+            target.MouseFilter = Control.MouseFilterEnum.Pass;
+            target.GuiInput += OnTargetGuiInput;
+        }
     }
 }
