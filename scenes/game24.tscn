@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8o83tbuvqbu2"]
+[gd_scene load_steps=17 format=3 uid="uid://c8o83tbuvqbu2"]
 
 [ext_resource type="Script" uid="uid://d1ymipl5tythu" path="res://scripts/GameManager.cs" id="1_l8as0"]
 [ext_resource type="Texture2D" uid="uid://d37evdnwvfoa2" path="res://assets/ATOI.png" id="2_miium"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://cwhmskee1nrgi" path="res://scripts/DraggableColorRect.cs" id="9_pphqj"]
 [ext_resource type="Script" uid="uid://3fakko0m1jxd" path="res://scripts/NewScript.cs" id="10_g58e0"]
 [ext_resource type="Texture2D" uid="uid://wgncud258iml" path="res://assets/heart.webp" id="11_1wpo3"]
+[ext_resource type="Script" uid="uid://m3myhvl11kui" path="res://scripts/SnapSlot.cs" id="12_auefe"]
+[ext_resource type="Texture2D" uid="uid://dt6838be66ai" path="res://assets/雨衣.jpg" id="12_d83y2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6xtyb"]
 font_size = 50
@@ -223,6 +225,7 @@ text = "im a button"
 metadata/_tab_index = 2
 
 [node name="Players" type="Node2D" parent="."]
+visible = false
 
 [node name="player_use_component" type="CharacterBody2D" parent="Players"]
 position = Vector2(301, 435)
@@ -272,7 +275,15 @@ script = ExtResource("5_7xbr5")
 
 [node name="ColorRects" type="Node2D" parent="."]
 
+[node name="Slot" type="ColorRect" parent="ColorRects"]
+offset_left = 553.0
+offset_top = 165.0
+offset_right = 960.0
+offset_bottom = 515.0
+script = ExtResource("12_auefe")
+
 [node name="ColorButton" type="ColorRect" parent="ColorRects"]
+visible = false
 offset_left = 144.0
 offset_top = 185.0
 offset_right = 300.0
@@ -294,6 +305,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="DraggableRect" type="ColorRect" parent="ColorRects"]
+visible = false
 offset_left = 860.0
 offset_top = 522.0
 offset_right = 1060.0
@@ -316,10 +328,10 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="DraggableRect2" type="ColorRect" parent="ColorRects"]
-offset_left = 539.0
-offset_top = 528.0
-offset_right = 739.0
-offset_bottom = 728.0
+offset_left = 159.0
+offset_top = 231.0
+offset_right = 359.0
+offset_bottom = 431.0
 color = Color(0.82, 0.5412, 0.77818, 1)
 script = ExtResource("9_pphqj")
 metadata/_edit_group_ = true
@@ -338,6 +350,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="DraggableRect3" type="ColorRect" parent="ColorRects"]
+visible = false
 offset_left = -3.0
 offset_top = 528.0
 offset_right = 197.0
@@ -364,6 +377,7 @@ anchors_preset = 0
 script = ExtResource("6_blagy")
 
 [node name="DraggableRectUseComponent" type="ColorRect" parent="ColorRects"]
+visible = false
 offset_left = 255.0
 offset_top = 522.0
 offset_right = 455.0
@@ -390,10 +404,11 @@ anchors_preset = 0
 script = ExtResource("6_blagy")
 
 [node name="Button" type="Button" parent="ColorRects"]
-offset_left = 763.0
-offset_top = 230.0
-offset_right = 899.0
-offset_bottom = 366.0
+visible = false
+offset_left = 69.0
+offset_top = 164.0
+offset_right = 205.0
+offset_bottom = 300.0
 text = "我是个button"
 icon = ExtResource("11_1wpo3")
 flat = true
@@ -403,3 +418,41 @@ icon_alignment = 1
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("6_blagy")
+
+[node name="ColorRect" type="ColorRect" parent="ColorRects/Button"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = -29.0
+offset_right = 108.0
+offset_bottom = 4.0
+color = Color(1, 1, 0.403922, 1)
+
+[node name="DragComponent" type="Control" parent="ColorRects/Button/ColorRect"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprites" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Control" parent="Sprites"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 97.0
+offset_top = 279.0
+offset_right = 276.0
+offset_bottom = 549.0
+metadata/_edit_group_ = true
+
+[node name="DragComponent" type="Control" parent="Sprites/Label"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 249.875
+offset_top = 354.125
+offset_right = 289.875
+offset_bottom = 394.125
+script = ExtResource("6_blagy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites/Label"]
+position = Vector2(90, 92)
+scale = Vector2(0.166898, 0.170602)
+texture = ExtResource("12_d83y2")

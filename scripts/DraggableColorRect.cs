@@ -2,7 +2,7 @@
 
 public partial class DraggableColorRect : ColorRect
 {
-    private bool isDragging = false;
+    public bool isDragging = false;
     private Vector2 dragOffset;
 
     private Label label;

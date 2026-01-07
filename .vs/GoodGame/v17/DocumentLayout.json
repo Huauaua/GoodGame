@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\dragcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\dragcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\newscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\newscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\SnapSlot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\SnapSlot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\draggablecolorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\draggablecolorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\dragcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|solutionrelative:scripts\\dragcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5315D77-9FA9-4EFC-9F6E-4CFA14DFDE2A}|GoodGame.csproj|c:\\users\\huauaua\\documents\\godottemps\\goodgame\\scripts\\hovercolorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,39 +50,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NewScript.cs",
-              "DocumentMoniker": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\NewScript.cs",
-              "RelativeDocumentMoniker": "scripts\\NewScript.cs",
-              "ToolTip": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\NewScript.cs",
-              "RelativeToolTip": "scripts\\NewScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "SnapSlot.cs",
+              "DocumentMoniker": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\SnapSlot.cs",
+              "RelativeDocumentMoniker": "scripts\\SnapSlot.cs",
+              "ToolTip": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\SnapSlot.cs",
+              "RelativeToolTip": "scripts\\SnapSlot.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwCQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T14:50:27.589Z",
+              "WhenOpened": "2026-01-07T14:55:30.081Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "DragComponent.cs",
               "DocumentMoniker": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\DragComponent.cs",
               "RelativeDocumentMoniker": "scripts\\DragComponent.cs",
               "ToolTip": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\DragComponent.cs",
               "RelativeToolTip": "scripts\\DragComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAABAwAcAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-06T14:41:35.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DraggableColorRect.cs",
               "DocumentMoniker": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\DraggableColorRect.cs",
               "RelativeDocumentMoniker": "scripts\\DraggableColorRect.cs",
               "ToolTip": "C:\\Users\\Huauaua\\Documents\\GodotTemps\\goodgame\\scripts\\DraggableColorRect.cs",
               "RelativeToolTip": "scripts\\DraggableColorRect.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAwBYAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-06T14:18:08.298Z",
               "EditorCaption": ""
@@ -97,8 +97,7 @@
               "RelativeToolTip": "scripts\\HoverColorRect.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-05T12:16:40.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-05T12:16:40.614Z"
             },
             {
               "$type": "Document",
